@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Criação de LandPag</title>
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+            <!-- Campo Text-->
+			<a class="btn btn-primary btn-sm" href="javascript:void(0)" id="addInput">
+				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+				Adicionar Campo text
+            </a>
+            <!-- Campo List Box-->
+			<a class="btn btn-default btn-sm" href="javascript:void(0)" id="addInput2">
+				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+				Adicionar Campo ListBox
+			</a>
+            <!-- Campo List CeckBox-->
+			<a class="btn btn-default btn-sm" href="javascript:void(0)" id="addInput3">
+				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+				Adicionar Campo CheckBox
+			</a>
+            <!-- Campo EditBox-->
+			<a class="btn btn-default btn-sm" href="javascript:void(0)" id="addInput4">
+				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+				Adicionar Campo EditBox
+			</a>
+            <!-- Campo Imagem-->
+			<a class="btn btn-default btn-sm" href="javascript:void(0)" id="addInput5">
+				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+				Adicionar Campo Imagem
+			</a>
+
+            <br/>
+            
+			<div id="dynamicDiv">
+		    </div>
+
+            <div id="dynamicDiv2">
+		    </div>
+
+            <div id="dynamicDiv3">
+		    </div>
+
+            <div id="dynamicDiv4">
+		    </div>
+
+            <div id="dynamicDiv5">
+		    </div>
+
+			<script>
+			$(function () {
+			    var scntDiv = $('#dynamicDiv');
+			    $(document).on('click', '#addInput', function () {
+			        $('<p>'+
+                        '<label>Texto</label>' +
+                        '<input type="text" id="inputeste" class="form-control" size="20" value="" placeholder="" /> '+
+		        		'<a class="btn btn-danger btn-sm" href="javascript:void(0)" id="remInput">'+
+							'<span class="glyphicon glyphicon-minus" aria-hidden="true"></span> '+
+							'Remover Campo'+
+		        		'</a>'+
+					'</p>').appendTo(scntDiv);
+			        return false;
+			    });
+			    $(document).on('click', '#remInput', function () {
+		            $(this).parents('p').remove();
+			        return false;
+			    });
+			});
+
+			$(function () {
+			    var scntDiv = $('#dynamicDiv2');
+			    $(document).on('click', '#addInput2', function () {
+                    $('<p>'+
+                        '<label>Qual seu Time?</label>' +
+                        '<select name="time" id="time" class="form-control" placeholder="Escolha seu Time do Coração"> '+
+                        '        <option value="" class="option"></option> '+
+                        '        <option value="Sao Paulo" class="option">São Paulo</option> '+
+                        '        <option value="Corintians" class="option">Corintians</option> '+
+                        '        <option value="Palmeiras" class="option">Palmeiras</option> '+
+                        '        <option value="Santos" class="option">Santos</option> '+
+                        '        <option value="Flamengo" class="option">Flamengo</option> '+
+                        '        <option value="Fluminense" class="option">Fluminense</option> '+
+                        '        <option value="Bota Fogo" class="option">Botafogo</option> '+
+                        '        <option value="Vasco" class="option">Vasco</option> '+
+                        '        <option value="Cruzeiro" class="option">Cruzeiro</option> '+
+                        '        <option value="Gremio" class="option">Grêmio</option> '+
+                        '        <option value="Chapecoense" class="option">Chapecoense</option> '+
+                        '        <option value="Atletico-MG" class="option">Atlético-MG</option> '+
+                        '        <option value="Internacional" class="option">Internacional</option> '+
+                        '        <option value="Sport" class="option">Sport</option> '+
+                        '        <option value="Bahia" class="option">Bahia</option> '+
+                        '        <option value="Ceara" class="option">Ceará</option> '+
+                        '        <option value="Vitoria" class="option">Vitória</option> '+
+                        '        <option value="Fortaleza" class="option">Fortaleza</option> '+
+                        '        <option value="Vasco" class="option">Vasco</option> '+
+                        '        <option value="" class="option">.....Europeus.....</option> '+
+                        '        <option value="Barcelona" class="option">Barcelona</option> '+
+                        '        <option value="Real Madrid" class="option">Real Madrid</option> '+
+                        '        <option value="Paris Saint Germain" class="option">Paris Saint-Germain</option> '+
+                        '        <option value="Juventus" class="option">Juventus</option> '+
+                        '        <option value="Bayern De Munique" class="option">Bayern de Munique</option> '+
+                        '        <option value="Ajax" class="option">Ajax</option> '+
+                        '        <option value="Benifica" class="option">Benefica</option> '+
+                        '</select> '+
+
+		        		'<a class="btn btn-danger btn-sm" href="javascript:void(0)" id="remInput2">'+
+							'<span class="glyphicon glyphicon-minus" aria-hidden="true"></span> '+
+							'Remover Campo'+
+		        		'</a>'+
+					'</p>').appendTo(scntDiv);
+			        return false;
+			    });
+			    $(document).on('click', '#remInput2', function () {
+		            $(this).parents('p').remove();
+			        return false;
+			    });
+			});
+
+            $(function () {
+			    var scntDiv = $('#dynamicDiv3');
+			    $(document).on('click', '#addInput3', function () {
+			        $('<p>'+
+                        '<label>Contrato</label>' +
+                        '    <input type="checkbox" name="termcond" id="termcond" required> Eu concordo  '+
+                        '    <span class="checkmark"></span> '+
+		        		' <a class="btn btn-danger btn-sm" href="javascript:void(0)" id="remInput">'+
+							'<span class="glyphicon glyphicon-minus" aria-hidden="true"></span> '+
+							'Remover Campo'+
+		        		'</a>'+
+					'</p>').appendTo(scntDiv);
+			        return false;
+			    });
+			    $(document).on('click', '#remInput3', function () {
+		            $(this).parents('p').remove();
+			        return false;
+			    });
+			});
+
+            $(function () {
+			    var scntDiv = $('#dynamicDiv4');
+			    $(document).on('click', '#addInput4', function () {
+			        $('<p>'+
+                        '<label>Pergunta</label>' +
+                        '    <textarea class="form-control" name="Mensagem" rows="5" id="contact-message" placeholder="Mensagem" data-error="Digite Sua Mensagem" required></textarea>  '+
+		        		' <a class="btn btn-danger btn-sm" href="javascript:void(0)" id="remInput">'+
+							'<span class="glyphicon glyphicon-minus" aria-hidden="true"></span> '+
+							'Remover Campo'+
+		        		'</a>'+
+					'</p>').appendTo(scntDiv);
+			        return false;
+			    });
+			    $(document).on('click', '#remInput4', function () {
+		            $(this).parents('p').remove();
+			        return false;
+			    });
+            });
+            
+
+            $(function () {
+			    var scntDiv = $('#dynamicDiv5');
+			    $(document).on('click', '#addInput5', function () {
+                    $('<p>'+
+                        '<img src="" width="140" />' +
+                        '<label>Imagem</label>' +
+                        '<input type="file" name="imagem_bloco1" class="form-control" />' +
+		        		' <a class="btn btn-danger btn-sm" href="javascript:void(0)" id="remInput">'+
+							'<span class="glyphicon glyphicon-minus" aria-hidden="true"></span> '+
+							'Remover Imagem'+
+		        		'</a>'+
+					'</p>').appendTo(scntDiv);
+			        return false;
+			    });
+			    $(document).on('click', '#remInput5', function () {
+		            $(this).parents('p').remove();
+			        return false;
+			    });
+            });
+
+            </script>
+		</div>
+	</body>
+</html>
